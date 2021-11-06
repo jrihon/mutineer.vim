@@ -38,8 +38,7 @@ If this command returns nothing, the filetype is not recognised.
 
 If the file you are working on is not natively recognised by Vim, put the following command in your .vimrc / init.vim :
 
-Where $FileExtension is the suffix of your file and $FileType is the name, all in lowercase letters!
-
+An example has been added for explanatory purposes
 ```vim
 autocmd BufNewFile,BufRead *.$FileExtension set filetype=$FileType
 autocmd BufNewFile,BufRead *.py set filetype='python'
