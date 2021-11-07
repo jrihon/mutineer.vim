@@ -1,4 +1,4 @@
-# Mutineej
+# Mutineer
 Simplifies commenting and uncommenting lines of code for every filetype
 ![Simplifies commenting and uncommenting lines of code](https://github.com/jrihon/mutineer.vim/blob/main/mutineer.gif)
 
@@ -63,7 +63,7 @@ As this is a string character, make sure to put it in between quotations.
 - C-shell --------- '.csh'
 - Dart ------------ '.dart'
 - Dlang ----------- '.d' 
-- GOlang ---------- '.go'
+- GoLang ---------- '.go'
 - Haskell --------- '.hs' 
 - Java ------------ '.java" 
 - JavaScript ------ '.js' 
@@ -77,7 +77,7 @@ As this is a string character, make sure to put it in between quotations.
 - Ruby ------------ '.rb' 
 - Rust ------------ '.rs'
 - SQL ------------- '.sql'
-- Shell--bash) ---- '.sh' 
+- Shell(bash) ----- '.sh' 
 - Swift ----------- '.swift'
 - TypeScript ------ '.ts'
 - Vim(script) ----- '.vim'
