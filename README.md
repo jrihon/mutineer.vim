@@ -1,6 +1,6 @@
 # Mutineer
 Simplifies commenting and uncommenting lines of code
-![Simplifies commenting and uncommenting lines of code](https://github.com/jrihon/mutineer.vim/mutineer.gif)
+![Simplifies commenting and uncommenting lines of code](https://github.com/jrihon/mutineer.vim/blob/main/mutineer.gif)
 
 # Installation
 ```vim
