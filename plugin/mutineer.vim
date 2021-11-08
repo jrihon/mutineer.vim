@@ -29,6 +29,10 @@ set cpo&vim
 
 "SECTION: MutineerGlobalVar {{{1
 "================================================================
+" I've noticed that on my laptop, the cursor moves around when I comment, but
+" that does not happen on my desktop. So ...
+let g:SpasticCursorMovementToggle = 0
+
 let g:MutineerCommentSymbolDictionaryPerLanguage = {
                                                 \'asm' : ';',
                                                 \'c' : '//',

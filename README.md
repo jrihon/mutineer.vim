@@ -53,6 +53,12 @@ let g:MutineerCommentSymbolDictionaryPerLanguage['&filetype'] = '$commentSymbol'
 ```
 with `$commentSymbol` the character that denotes a commented line in your preferred language.
 
+I've noticed that on my laptop, the cursor moves around when I comment, but that does not happen on my desktop. So I've created an added global variable to toggle the spastic movements.
+By spastic movements, I mean that the cursor position backspaces by one column every time I comment with Mutineer. By default it is inactivated. If your cursor is spastic, toggle this with the following command.
+```vim
+let g:SpasticCursorMovementToggle = 1
+```
+
 NB : This line must come after the custom autocommand, if you also need to specify your filetype. 
 As this is a string character, make sure to put it in between quotations.
 

@@ -68,12 +68,14 @@ function! mutineer#SingleLine(commentStr, linenr) abort
     
     if a:commentStr !=? FirstChar " not equal, case insensitive
         call mutineer#CommentALine(a:commentStr, FirstChar, a:linenr) 
-        execute "normal! 1h"
+        if g:SpasticCursorMovementToggle 
+            execute "normal! 1h"
     
     elseif a:commentStr ==? FirstChar " equal, case insensitive
         let l:UncommentedChars = mutineer#ReturnUncommentedChars(a:commentStr, a:linenr)
         call mutineer#UncommentALine(a:commentStr, UncommentedChars, a:linenr) 
-        execute "normal! 1h"
+        if g:SpasticCursorMovementToggle 
+            execute "normal! 1h"
     endif
 endfunction
 
