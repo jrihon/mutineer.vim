@@ -70,12 +70,15 @@ function! mutineer#SingleLine(commentStr, linenr) abort
         call mutineer#CommentALine(a:commentStr, FirstChar, a:linenr) 
         if g:SpasticCursorMovementToggle 
             execute "normal! 1h"
+        endif
     
     elseif a:commentStr ==? FirstChar " equal, case insensitive
         let l:UncommentedChars = mutineer#ReturnUncommentedChars(a:commentStr, a:linenr)
         call mutineer#UncommentALine(a:commentStr, UncommentedChars, a:linenr) 
         if g:SpasticCursorMovementToggle 
             execute "normal! 1h"
+        endif
+
     endif
 endfunction
 
