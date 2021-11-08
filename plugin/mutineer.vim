@@ -30,6 +30,7 @@ set cpo&vim
 "SECTION: MutineerGlobalVar {{{1
 "================================================================
 let g:MutineerCommentSymbolDictionaryPerLanguage = {
+                                                \'asm' : ';',
                                                 \'c' : '//',
                                                 \'cpp' : '//',
                                                 \'cs' : '//',
@@ -54,6 +55,7 @@ let g:MutineerCommentSymbolDictionaryPerLanguage = {
                                                 \'tex' : '%',
                                                 \'typescript' : '//',
                                                 \'vim' : '"',
+                                                \'yml' : '#',
                                                 \'zsh' : '#',
                                                     \}
 

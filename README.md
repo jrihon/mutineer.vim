@@ -57,6 +57,7 @@ NB : This line must come after the custom autocommand, if you also need to speci
 As this is a string character, make sure to put it in between quotations.
 
 # Supported languages
+- Assembly -------- '.asm'
 - C --------------- '.c' 
 - C# -------------- '.cs'
 - C++ ------------- '.cpp'
@@ -81,6 +82,7 @@ As this is a string character, make sure to put it in between quotations.
 - Swift ----------- '.swift'
 - TypeScript ------ '.ts'
 - Vim(script) ----- '.vim'
+- YAML ------------ '.yml'
 - Z-shell --------- '.zsh'
 
 
