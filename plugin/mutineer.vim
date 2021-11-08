@@ -4,7 +4,7 @@
 " Maintainer: Jérôme Rihon<jeromerihon@gmail.com>
 " Version: 0.1
 " License: MIT
-" Website: https://github.com/jrihon/mutineer
+" Website: https://github.com/jrihon/mutineer.vim
 " 
 "                                                                    __  __       _   _                      
 "                                                                   |  \/  |_   _| |_(_)_ __   ___  ___ _ __ 
@@ -30,7 +30,6 @@ set cpo&vim
 "SECTION: MutineerGlobalVar {{{1
 "================================================================
 let g:MutineerCommentSymbolDictionaryPerLanguage = {
-                                                \'asm' : ';',
                                                 \'c' : '//',
                                                 \'cpp' : '//',
                                                 \'cs' : '//',
@@ -55,7 +54,6 @@ let g:MutineerCommentSymbolDictionaryPerLanguage = {
                                                 \'tex' : '%',
                                                 \'typescript' : '//',
                                                 \'vim' : '"',
-                                                \'yml' : '#',
                                                 \'zsh' : '#',
                                                     \}
 

@@ -35,7 +35,7 @@ Comment symbols elsewhere would entail user inputted comments, and comments not 
 You can check if vim recognises your filetype by `:echo &filetype` in the buffer that has the file you want recognised opened.
 If this command returns ` `, the filetype is not recognised.
 
-`path/to/vim/plugged/mutineer/AllKnownVimFileTypes.txt` contains a list of all the natively recognised filetypes.
+`path/to/vim/plugged/mutineer.vim/doc/AllKnownVimFileTypes.txt` contains a list of all the natively recognised filetypes.
 
 If the file you are working on is not natively recognised by Vim, put the following command in your .vimrc / init.vim :
 
@@ -57,7 +57,6 @@ NB : This line must come after the custom autocommand, if you also need to speci
 As this is a string character, make sure to put it in between quotations.
 
 # Supported languages
-- Assembly -------- '.asm' 
 - C --------------- '.c' 
 - C# -------------- '.cs'
 - C++ ------------- '.cpp'
@@ -82,7 +81,6 @@ As this is a string character, make sure to put it in between quotations.
 - Swift ----------- '.swift'
 - TypeScript ------ '.ts'
 - Vim(script) ----- '.vim'
-- YAML ------------ '.yml'
 - Z-shell --------- '.zsh'
 
 

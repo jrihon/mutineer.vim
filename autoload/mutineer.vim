@@ -4,7 +4,7 @@
 " Maintainer: Jérôme Rihon<jeromerihon@gmail.com>
 " Version: 0.1
 " License: MIT
-" Website: https://github.com/jrihon/mutineer
+" Website: https://github.com/jrihon/mutineer.vim
 "===========================================================================================================================================================
 "
 "
