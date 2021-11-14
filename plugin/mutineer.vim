@@ -28,7 +28,9 @@ set cpo&vim
 
 " I've noticed that on my laptop, the cursor moves around when I comment, but that does not happen on my desktop. So ...
 " Also, for some reason, my init.vim isn't sourced properly and now I have to manually adjust it in the plugin folder instead of my init.vim
-let g:SpasticCursorMovementToggle = 0
+if !exists('g:SpasticCursorMovementToggle')
+    let g:SpasticCursorMovementToggle = 0
+endif
 
 
 "SECTION: MutineerGlobalVar {{{1
