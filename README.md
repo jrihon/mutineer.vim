@@ -67,6 +67,7 @@ let g:MutineerCommentSymbolDictionaryPerLanguageBLOCK['cpp'] = ['/*', '**', '*/'
 with `$commentSymbol` (CS) the character that denotes a commented line in your preferred language.
 
 
+## Spastic Cursor (sometimes)
 I had noticed that on my laptop, the cursor jumped location whenever I line-commenting, though this was not the case on my desktop, so I created a toggle in case it happens to you :
 ```vim
 let g:SpasticCursorMovementToggle = 1
