@@ -50,18 +50,30 @@ Where $FileExtension is the suffix of your file and $FileType is the name, all i
 
 ```vim
 autocmd BufNewFile,BufRead *.$FileExtension set filetype=$FileType
-autocmd BufNewFile,BufRead *.py set filetype='python'
+autocmd BufNewFile,BufRead *.cpp set filetype='cpp'
 ```
 
 ## Adding your comment symbol to Mutineer
-As of now, there is only a single global variable that is accessible for the user. To add your filetype to `mutineer.vim`, add the following line to your .vimrc / init.vim :
-```vim
-let g:MutineerCommentSymbolDictionaryPerLanguage['&filetype'] = '$commentSymbol'
-```
-with `$commentSymbol` the character that denotes a commented line in your preferred language.
+As of now, there are three global single global variables that is accessible for the user. An example has been added for clarification. To add your filetype to `mutineer.vim`, add the following line to your .vimrc / init.vim :
 
-NB : This line must come after the custom autocommand, if you also need to specify your filetype. 
-As this is a string character, make sure to put it in between quotations.
+```vim
+" For :Mutineer
+let g:MutineerCommentSymbolDictionaryPerLanguage['&filetype'] = '$commentSymbol'
+let g:MutineerCommentSymbolDictionaryPerLanguage['cpp'] = '//'
+
+let g:MutineerCommentSymbolDictionaryPerLanguageBLOCK['&filetype'] = ['$startCS', '$middleCS', '$endCS']
+let g:MutineerCommentSymbolDictionaryPerLanguageBLOCK['cpp'] = ['/*', '**', '*/']
+```
+with `$commentSymbol` (CS) the character that denotes a commented line in your preferred language.
+
+
+I had noticed that on my laptop, the cursor jumped location whenever I line-commenting, though this was not the case on my desktop, so I created a toggle in case it happens to you :
+```vim
+let g:SpasticCursorMovementToggle = 1
+```
+
+NB : These lines must come after the custom autocommand, if you also need to specify your filetype. 
+As these are string characters, make sure to put it in between quotations.
 
 # Supported languages
 - Assembly -------- '.asm'
