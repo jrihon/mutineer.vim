@@ -2,9 +2,9 @@
 "                                                       Mutineer - Simplifies commenting and uncommenting lines of code for every filetype
 "
 " Maintainer: Jérôme Rihon<jeromerihon@gmail.com>
-" Version: 0.1
+" Version: 0.2
 " License: MIT
-" Website: https://github.com/jrihon/mutineer.vim
+" Website: https://github.com/jrihon/mutineer
 " 
 "                                                                    __  __       _   _                      
 "                                                                   |  \/  |_   _| |_(_)_ __   ___  ___ _ __ 
@@ -26,12 +26,13 @@ let g:loaded_mutineer_global = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+" I've noticed that on my laptop, the cursor moves around when I comment, but that does not happen on my desktop. So ...
+" Also, for some reason, my init.vim isn't sourced properly and now I have to manually adjust it in the plugin folder instead of my init.vim
+let g:SpasticCursorMovementToggle = 0
+
 
 "SECTION: MutineerGlobalVar {{{1
 "================================================================
-" I've noticed that on my laptop, the cursor moves around when I comment, but that does not happen on my desktop. So ...
-let g:SpasticCursorMovementToggle = 0
-
 let g:MutineerCommentSymbolDictionaryPerLanguage = {
                                                 \'asm' : ';',
                                                 \'c' : '//',
@@ -63,9 +64,20 @@ let g:MutineerCommentSymbolDictionaryPerLanguage = {
                                                     \}
 
 
+                                                " Sometimes, there is only a begin and end, so the middle part is left empty
+let g:MutineerCommentSymbolDictionaryPerLanguageBLOCK = {
+                                                \'cpp' : ['/*', '**', '*/'],
+                                                \'html' : ['<!---', '', '--->'],
+                                                \'java' : ['/*', '', '*/'],
+                                                \'javascript' : ['/*', '', '*/'],
+                                                    \}
+
+
 " SECTION: Mutineer command {{{1
 "================================================================
-command! -range Mutineer call mutineer#MutineerMain(<range>,<line1>, <line2>)
+command! -range Mutineer call mutineer#MutineerLine(<range>,<line1>, <line2>)
+
+command! -range MutineerBlock call mutineer#MutineerBlock(<range>,<line1>, <line2>)
 
 " end of the file
 let &cpo = s:save_cpo
