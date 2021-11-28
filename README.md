@@ -50,7 +50,7 @@ Where $FileExtension is the suffix of your file and $FileType is the name, all i
 
 ```vim
 autocmd BufNewFile,BufRead *.$FileExtension set filetype=$FileType
-autocmd BufNewFile,BufRead *.cpp set filetype='cpp'
+autocmd BufNewFile,BufRead *.foo set filetype='foobar'
 ```
 
 ## Adding your comment symbol to Mutineer
@@ -58,11 +58,13 @@ As of now, there are three global single global variables that is accessible for
 
 ```vim
 " For :Mutineer
-let g:MutineerCommentSymbolDictionaryPerLanguage['&filetype'] = '$commentSymbol'
-let g:MutineerCommentSymbolDictionaryPerLanguage['cpp'] = '//'
+let g:MutineerCommentSymbolDictionaryPerLanguageExtended = {}       " REQUIRED LINE TO INITIALISE DICTIONARY
+let g:MutineerCommentSymbolDictionaryPerLanguageExtended['&filetype'] = '$commentSymbol'
+let g:MutineerCommentSymbolDictionaryPerLanguageExtended['foobar'] = '@@'
 
+let g:MutineerCommentSymbolDictionaryPerLanguageExtended = {}       " REQUIRED LINE TO INITIALISE DICTIONARY
 let g:MutineerCommentSymbolDictionaryPerLanguageBLOCK['&filetype'] = ['$startCS', '$middleCS', '$endCS']
-let g:MutineerCommentSymbolDictionaryPerLanguageBLOCK['cpp'] = ['/*', '**', '*/']
+let g:MutineerCommentSymbolDictionaryPerLanguageBLOCK['foobar'] = ['/@', '**', '@/']
 ```
 with `$commentSymbol` (CS) the character that denotes a commented line in your preferred language.
 

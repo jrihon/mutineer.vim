@@ -6,9 +6,25 @@ function! utilities#mutineer_utilities#RetrieveFileTypeForCommentSymbol(method) 
     let l:ft = &filetype
     " This variable is set in the plugin/mutineer.vim
     if a:method == "line"
-        return g:MutineerCommentSymbolDictionaryPerLanguage[l:ft]
+        if has_key(g:MutineerCommentSymbolDictionaryPerLanguage, l:ft)
+            return g:MutineerCommentSymbolDictionaryPerLanguage[l:ft]
+        elseif !empty(g:MutineerCommentSymbolDictionaryPerLanguageExtended)
+            if has_key(g:MutineerCommentSymbolDictionaryPerLanguageExtended, l:ft)
+                return g:MutineerCommentSymbolDictionaryPerLanguageExtended[l:ft]
+            endif
+        else
+            echoerr "E69 Key does not exist! Add your &filetype to g:MutineerCommentSymbolDictionaryPerLanguageExtended "
+        endif
     elseif a:method == "block"
-        return g:MutineerCommentSymbolDictionaryPerLanguageBLOCK[l:ft]
+        if has_key(g:MutineerCommentSymbolDictionaryPerLanguageBLOCK, l:ft)
+            return g:MutineerCommentSymbolDictionaryPerLanguageBLOCK[l:ft]
+        elseif !empty(g:MutineerCommentSymbolDictionaryPerLanguageBLOCKExtended)
+            if has_key(g:MutineerCommentSymbolDictionaryPerLanguageBLOCKExtended, l:ft)
+                return g:MutineerCommentSymbolDictionaryPerLanguageBLOCKExtended[l:ft]
+            endif
+        else
+            echoerr "E69 Key does not exist! Add your &filetype to g:MutineerCommentSymbolDictionaryPerLanguageBLOCKExtended "
+        endif
     endif
 endfunction
 
