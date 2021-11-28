@@ -75,7 +75,6 @@ function! utilities#mutineer_utilities#SingleLine(commentStr, linenr) abort
     " Check if the line has been commented before with a $commentSymbol(s)
     let l:FirstChar = utilities#mutineer_utilities#FirstCharactersOfLine(a:commentStr, a:linenr)
     
-    echom l:FirstChar
     if a:commentStr !=? FirstChar " not equal, case insensitive
         call utilities#mutineer_utilities#CommentALine(a:commentStr, FirstChar, a:linenr) 
         if g:SpasticCursorMovementToggle
