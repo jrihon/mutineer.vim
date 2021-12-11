@@ -42,14 +42,14 @@ Works similar to `:Mutineer` visual-selection. When a block-comment has been set
 You can check if vim recognises your filetype by `:echo &filetype` in the buffer that has the file you want recognised opened.
 If this command returns ` `, the filetype is not recognised.
 
-`path/to/vim/plugged/mutineer/AllKnownVimFileTypes.txt` contains a list of all the natively recognised filetypes.
+`path/to/vim/plugged/mutineer.vim/AllKnownVimFileTypes.txt` contains a list of all the natively recognised filetypes.
 
 If the file you are working on is not natively recognised by Vim, put the following command in your .vimrc / init.vim :
 
 Where $FileExtension is the suffix of your file and $FileType is the name, all in lowercase letters! An example has been added for clarification.
 
 ```vim
-autocmd BufNewFile,BufRead *.$FileExtension set filetype=$FileType
+" autocmd BufNewFile,BufRead *.$FileExtension set filetype=$FileType
 autocmd BufNewFile,BufRead *.foo set filetype='foobar'
 ```
 
@@ -59,11 +59,11 @@ As of now, there are three global single global variables that is accessible for
 ```vim
 " For :Mutineer
 let g:MutineerCommentSymbolDictionaryPerLanguageExtended = {}       " REQUIRED LINE TO INITIALISE DICTIONARY
-let g:MutineerCommentSymbolDictionaryPerLanguageExtended['&filetype'] = '$commentSymbol'
+" let g:MutineerCommentSymbolDictionaryPerLanguageExtended['&filetype'] = '$commentSymbol'
 let g:MutineerCommentSymbolDictionaryPerLanguageExtended['foobar'] = '@@'
 
 let g:MutineerCommentSymbolDictionaryPerLanguageExtended = {}       " REQUIRED LINE TO INITIALISE DICTIONARY
-let g:MutineerCommentSymbolDictionaryPerLanguageBLOCK['&filetype'] = ['$startCS', '$middleCS', '$endCS']
+" let g:MutineerCommentSymbolDictionaryPerLanguageBLOCK['&filetype'] = ['$startCS', '$middleCS', '$endCS']
 let g:MutineerCommentSymbolDictionaryPerLanguageBLOCK['foobar'] = ['/@', '**', '@/']
 ```
 with `$commentSymbol` (CS) the character that denotes a commented line in your preferred language.
